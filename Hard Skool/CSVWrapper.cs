@@ -16,7 +16,7 @@ namespace Hard_Skool
 
     namespace ProyectoNET.DataWrappers
     {
-        
+
 
         public class CSVWrapper : IDataWrapper
         {
@@ -38,12 +38,16 @@ namespace Hard_Skool
 
             private IEnumerable<dynamic> ReadCSVFile()
             {
-                using var reader = new StreamReader(_csvFilePath);
-                using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+                List<dynamic> records; // Define la variable fuera del bloque using.
 
-                // Assuming 'dynamic' for flexibility, but you should use a specific class that represents your CSV structure
-                var records = csv.GetRecords<dynamic>().ToList();
-                return records;
+                // Abre el archivo CSV y lee los registros.
+                using (var reader = new StreamReader(_csvFilePath))
+                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                {
+                    records = csv.GetRecords<dynamic>().ToList(); // Asigna los registros leídos a la variable.
+                }
+
+                return records; // Devuelve los registros después de cerrar el archivo y el lector CSV.
             }
 
             private IEnumerable<string> ConvertToJSON(IEnumerable<dynamic> records)
@@ -63,5 +67,6 @@ namespace Hard_Skool
             }
         }
     }
+}
 
 
