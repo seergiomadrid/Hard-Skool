@@ -52,8 +52,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="CSVWrapper.cs" />
+    <Compile Include="GlobalModel.cs" />
+    <Compile Include="GlobalRepository.cs" />
+    <Compile Include="IDataWrapper.cs" />
+    <Compile Include="JSONWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XMLWrapper.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
