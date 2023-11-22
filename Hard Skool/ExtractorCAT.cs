@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hard_Skool
 {
-    internal class Class1
+    internal class ExtractorCAT
     {
         //esto es un push
     }
